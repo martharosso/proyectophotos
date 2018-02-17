@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Photos</h1>
+<div class="container">
+  <div class="row">
+    <% @photos.each do |photo| %>
+<div class="well col-md-4 rend">
+        <%= photo.name %>
+        <%= image_tag photo.picture, class: "img-responsive" %>
+        <%= photo.desc %>
+        <%= link_to 'Show', photo %>
+        <%= link_to 'Edit', edit_photo_path(photo) %>
+        <%= link_to 'Destroy', photo, method: :delete, data: { confirm: 'Are you sure?' } %>
+<div/>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Photo', new_photo_path %>
